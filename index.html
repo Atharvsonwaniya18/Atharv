@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atharv Sonwaniya | Portfolio</title>
+    <style>
+        :root {
+            --primary-blue: #3d6cb9; 
+            --accent-amber: #f5a623; 
+            --text-dark: #2c3e50;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.5rem 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        nav .logo img {
+            width:  40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-blue);
+            display: block;
+        }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: var(--primary-blue); }
+
+        /* Hero Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e5eaf5;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(217, 45%, 48%, 0.15) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(38, 91%, 55%, 0.15) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(217, 45%, 48%, 0.15) 0, transparent 50%);
+            background-size: cover;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-box {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Common Sections */
+        section { padding: 100px 10%; min-height: 80vh; }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--primary-blue);
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 5px;
+            background: var(--accent-amber);
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+
+        .about-card, .ach-card, form {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-blue);
+            border: 1px solid #edf2f7;
+            transition: 0.3s;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent-amber);
+            transform: translateY(-5px);
+        }
+
+        .ach-card {
+            margin-bottom: 20px;
+            border-left: 6px solid var(--accent-amber);
+        }
+
+        .ppt-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-amber);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer { text-align: center; padding: 40px; color: #718096; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="a.jpeg" alt="Atharv">
+            <span>Atharv</span>
+        </div>
+        <ul> 
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="hero-box">
+            <h1>Hello, I'm Atharv Sonwaniya</h1>
+            <p>Student at <strong>Shri Vaishnav Vidyapeeth Vishwavidyalaya</strong></p>
+            <p style="font-size: 1.1rem; margin-top: 10px; color: #666;">Indore, Madhya Pradesh</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-card" style="text-align: center;">
+            <p>I am a passionate learner currently pursuing my degree at <strong>SVVV Indore</strong>. I enjoy exploring new technologies and am dedicated to building a strong foundation in engineering and software development.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Communication Skills</div>
+            <div class="skill-item">Basic Computer Knowledge</div>
+            <div class="skill-item">Hard Working</div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2>My Achievements</h2>
+        
+        <div class="ach-card">
+            <h3>SVVV Academic Honors</h3>
+            <p>I have given a presentation on the anchor tag.</p>
+            <a href="Anchor Tag ppt.pptx" class="ppt-link" target="_blank">View Presentation (PPT) →</a>
+        </div>
+
+        <div class="ach-card">
+            <h3>Certifications</h3>
+            <p>I have received several certificates in school academics.</p>
+        </div>
+
+        <div class="ach-card">
+            <h3>Self Achievements</h3>
+            <p>I am punctual and complete my work on time.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Atharv Sonwaniya | SVVV Indore</p>
+    </footer>
+
+</body>
+</html>
